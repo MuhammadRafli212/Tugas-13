@@ -188,11 +188,41 @@ class _Login extends State<HalLogin> {
                           ])
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomeProfil(),
-                                  ),
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text("Konfirmasi"),
+                                      content: const Text(
+                                        "Apakah Anda yakin menggunakan akun tersebut?",
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(
+                                              context,
+                                            ).pop(); // Tutup dialog
+                                          },
+                                          child: const Text("Tidak"),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(
+                                              context,
+                                            ).pop(); // Tutup dialog
+                                            Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder:
+                                                    (context) => HomeProfil(),
+                                              ),
+                                            );
+                                          },
+                                          child: const Text("Iya"),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
                               },
                               child: Image.network(url, height: 25, width: 25),

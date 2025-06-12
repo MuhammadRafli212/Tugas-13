@@ -182,11 +182,41 @@ class _HalRegisterState extends State<HalRegister> {
                           ])
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HalLogin(),
-                                  ),
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text("Konfirmasi"),
+                                      content: const Text(
+                                        "Apakah Anda ingin mengizinkan menggunakan akun tersebut?",
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(
+                                              context,
+                                            ).pop(); // Tutup dialog
+                                          },
+                                          child: const Text("Tidak"),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(
+                                              context,
+                                            ).pop(); // Tutup dialog
+                                            Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder:
+                                                    (context) => HalLogin(),
+                                              ),
+                                            );
+                                          },
+                                          child: const Text("Iya"),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
                               },
                               child: Image.network(url, height: 25, width: 25),

@@ -13,7 +13,7 @@ class Beranda extends StatefulWidget {
 }
 
 class _beranda extends State<Beranda> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 1;
   List<Widget> listScreen = [
     TimePickerPage(),
     PilihLatihan(),

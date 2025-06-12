@@ -61,8 +61,32 @@ class _TambahLatihanState extends State<TambahLatihan> {
   }
 
   void _hapus(int id) async {
-    await DbWorkout.deleteWorkout(id);
-    _loadWorkouts();
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Konfirmasi Hapus'),
+            content: const Text('Apakah Anda yakin ingin menghapus data ini?'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: const Text('Batal'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: const Text('Hapus'),
+              ),
+            ],
+          ),
+    );
+
+    if (confirm == true) {
+      await DbWorkout.deleteWorkout(id);
+      _loadWorkouts();
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Data berhasil dihapus')));
+    }
   }
 
   void _isiFormEdit(Workout w) {
