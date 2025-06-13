@@ -13,6 +13,7 @@ class HalRegister extends StatefulWidget {
 
 class _HalRegisterState extends State<HalRegister> {
   final _formKey = GlobalKey<FormState>();
+  bool isVisible = false;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -99,18 +100,30 @@ class _HalRegisterState extends State<HalRegister> {
                             const Divider(),
                             TextFormField(
                               controller: passwordController,
+                              obscureText: !isVisible,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.lock_outline),
+                                border: InputBorder.none,
+                                labelText: 'Your Password',
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    isVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      isVisible = !isVisible;
+                                    });
+                                  },
+                                ),
+                              ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Password harus diisi';
                                 }
                                 return null;
                               },
-                              obscureText: true,
-                              decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.lock),
-                                border: InputBorder.none,
-                                labelText: 'Password',
-                              ),
                             ),
                             const Divider(),
                             TextFormField(
