@@ -13,7 +13,7 @@ class Beranda extends StatefulWidget {
 }
 
 class _beranda extends State<Beranda> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2;
   List<Widget> listScreen = [
     TimePickerPage(),
     PilihLatihan(),
@@ -53,8 +53,11 @@ class _beranda extends State<Beranda> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.date_range_rounded),
-              title: Text('Alarm', style: TextStyle(fontSize: 14)),
+              leading: Icon(Icons.sports_gymnastics_sharp),
+              title: Text(
+                'Pilih Kategori Latihan',
+                style: TextStyle(fontSize: 14),
+              ),
               onTap: () {
                 setState(() {
                   _selectedIndex = 1;
@@ -63,18 +66,16 @@ class _beranda extends State<Beranda> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.sports_gymnastics_sharp),
-              title: Text(
-                'Pilih Kategori Latihan',
-                style: TextStyle(fontSize: 14),
-              ),
+              leading: Icon(Icons.date_range_rounded),
+              title: Text('Alarm', style: TextStyle(fontSize: 14)),
               onTap: () {
                 setState(() {
-                  _selectedIndex = 2;
+                  _selectedIndex = 0;
                 });
                 Navigator.pop(context);
               },
             ),
+
             ListTile(
               leading: Icon(Icons.date_range_outlined),
               title: Text(
@@ -83,7 +84,7 @@ class _beranda extends State<Beranda> {
               ),
               onTap: () {
                 setState(() {
-                  _selectedIndex = 3;
+                  _selectedIndex = 2;
                 });
                 Navigator.pop(context);
               },

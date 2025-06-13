@@ -135,9 +135,7 @@ class _TambahLatihanState extends State<TambahLatihan> {
                   ),
                   TextFormField(
                     controller: _durationController,
-                    decoration: const InputDecoration(
-                      labelText: 'Durasi (menit)',
-                    ),
+                    decoration: const InputDecoration(labelText: 'Jumlah(Set)'),
                     keyboardType: TextInputType.number,
                     validator: (v) {
                       if (v == null || v.isEmpty) return 'Wajib diisi';

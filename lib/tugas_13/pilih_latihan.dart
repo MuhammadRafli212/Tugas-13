@@ -62,7 +62,7 @@ class PilihLatihan extends StatelessWidget {
               ),
               child: Text('Daftar Target Latihan'),
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -80,7 +80,7 @@ class PilihLatihan extends StatelessWidget {
               ),
               child: Text('Tambah Latihan'),
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 5),
           ],
         ),
       ),

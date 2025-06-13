@@ -65,22 +65,24 @@ class _listLatihan extends State<ListLatihan> {
       body: ListView.builder(
         itemCount: dataLatihan.length,
         itemBuilder: (BuildContext context, int index) {
-          final perabotan = dataLatihan[index];
+          final listLatihan = dataLatihan[index];
           return ListTile(
             leading: CircleAvatar(
-              backgroundImage: NetworkImage(perabotan.imageUrl),
+              backgroundImage: NetworkImage(listLatihan.imageUrl),
             ),
-            title: Text(perabotan.namaLatihan),
-            subtitle: Text(' ${perabotan.jumlahHari}'),
+            title: Text(listLatihan.namaLatihan),
+            subtitle: Text('per set ${listLatihan.jumlahHari}'),
             trailing: IconButton(
               onPressed: () {
                 setState(() {
-                  perabotan.isFavorite = !perabotan.isFavorite;
+                  listLatihan.isFavorite = !listLatihan.isFavorite;
                 });
               },
               icon: Icon(
-                perabotan.isFavorite ? Icons.favorite : Icons.favorite_outline,
-                color: perabotan.isFavorite ? Colors.red : null,
+                listLatihan.isFavorite
+                    ? Icons.check_box_sharp
+                    : Icons.check_box_outline_blank,
+                color: listLatihan.isFavorite ? Colors.grey : null,
               ),
             ),
           );

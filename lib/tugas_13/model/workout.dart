@@ -21,7 +21,7 @@ class WorkoutTile extends StatelessWidget {
       child: ListTile(
         title: Text(workout.title),
         subtitle: Text(
-          'Durasi: ${workout.duration} menit\nStatus: ${workout.status}',
+          'Jumlah: ${workout.duration} Set\nStatus: ${workout.status}',
         ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
