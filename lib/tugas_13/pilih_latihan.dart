@@ -16,7 +16,7 @@ class PilihLatihan extends StatelessWidget {
               height: 100,
               width: double.infinity,
               child: Image.network(
-                'https://c4.wallpaperflare.com/wallpaper/397/368/879/sports-mixed-martial-arts-mma-wallpaper-preview.jpg',
+                'https://anextrarep.com/wp-content/uploads/2021/05/April-Quotes-1.webp',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -44,7 +44,18 @@ class PilihLatihan extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 5),
+            SizedBox(
+              height: 100,
+              width: double.infinity,
+              child: Image.network(
+                'https://i.pinimg.com/originals/86/67/5c/86675c4a69a809a46f88cbf5ca3d080f.jpg',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+            ),
+            SizedBox(height: 5),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -55,7 +66,7 @@ class PilihLatihan extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff697565),
                 foregroundColor: Colors.white,
-                minimumSize: Size(double.infinity, 100),
+                minimumSize: Size(double.infinity, 75),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(7),
                 ),
@@ -73,7 +84,7 @@ class PilihLatihan extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff697565),
                 foregroundColor: Colors.white,
-                minimumSize: Size(double.infinity, 100),
+                minimumSize: Size(double.infinity, 75),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(7),
                 ),

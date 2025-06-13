@@ -40,7 +40,7 @@ class _HalRegisterState extends State<HalRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF40534C),
+      backgroundColor: const Color(0xFF697565),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -162,7 +162,7 @@ class _HalRegisterState extends State<HalRegister> {
                         child: ElevatedButton(
                           onPressed: _handleRegister,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff40534C),
+                            backgroundColor: Color(0xFF697565),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
